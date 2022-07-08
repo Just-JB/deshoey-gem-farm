@@ -1,12 +1,16 @@
 <template>
   <loading :active="isLoading" :is-full-page="fullPage" :loader="loader" />
-  <div v-if="!wallet" class="flex justify-center ">
+  <!-- absolute assets -->
+  <div class="px-16 mt-8 mx-auto max-w-2xl">
+    <img src="/DeShoeysbwDEF.png" alt="deshoey" />
+  </div>
+  <div v-if="!wallet" class="flex justify-center">
     <div class="justify-center w-full flex flex-col">
       <div class="flex flex-col sm:flex-row justify-center mb-10">
         <div
           class="flex flex-col w-full sm:w-96 text-center p-3 sm:p-1 justify-center"
         >
-          <div class="text-base">Total Menu Items Staked</div>
+          <div class="text-base">Total Shoes Staked</div>
           <div v-if="farmAcc" class="text-6xl farm-value">
             {{ farmAcc?.gemsStaked }}
           </div>
@@ -15,7 +19,7 @@
         <div
           class="flex flex-col w-full sm:w-96 text-center p-3 sm:p-1 justify-center"
         >
-          <div class="text-base">% of Meals Not Thrown Out (Staked)</div>
+          <div class="text-base">% of Total Shoes Staked</div>
           <div v-if="farmAcc" class="text-6xl farm-value">
             {{
               Math.floor((parseInt(farmAcc?.gemsStaked) / 274.0) * 100 * 10) /
@@ -82,7 +86,10 @@
         >
           End cooldown
         </button>
-        <button class="bg-rb-mickeyred text-white rounded-lg py-2 px-3 mx-2" @click="claim">
+        <button
+          class="bg-rb-mickeyred text-white rounded-lg py-2 px-3 mx-2"
+          @click="claim"
+        >
           Claim {{ availableA / 1000000000 }} $DUST
         </button>
       </Vault>
@@ -92,7 +99,10 @@
         No staking account found with this wallet! Make a new one?
       </div>
       <div class="w-full text-center">
-        <button class="bg-rb-mickeyred text-white rounded-lg py-2 px-3 mx-2" @click="initFarmer">
+        <button
+          class="bg-rb-mickeyred text-white rounded-lg py-2 px-3 mx-2"
+          @click="initFarmer"
+        >
           Create New Staking Account
         </button>
       </div>
@@ -139,7 +149,7 @@ export default defineComponent({
     const isLoading = ref<boolean>(false);
 
     // --------------------------------------- farmer details
-    const farm = ref<string>("7hVwjcQ8Gf1p3mFRBtNPUU9SofnuxbneQXSaz9jM4dvF");
+    const farm = ref<string>("3amNCMojt19bdYQimrZB3JY9ezQLMd3ZvLFY8dE6oHcb");
     const farmAcc = ref<any>();
 
     const farmerIdentity = ref<string>();
@@ -154,7 +164,6 @@ export default defineComponent({
       await freshStart();
       await updateAvailableRewards();
     });
-    
 
     const updateAvailableRewards = async () => {
       availableA.value = farmerAcc.value.rewardA.accruedReward
@@ -236,7 +245,7 @@ export default defineComponent({
         await fetchFarmer();
       } catch (err) {
         console.log(err);
-        alert(err)
+        alert(err);
       } finally {
         isLoading.value = false;
       }

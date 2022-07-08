@@ -1,15 +1,9 @@
 <template>
-  <div class="ml-20 mr-20 border-2 border-red-900 bg-gray-50 shadow-xl rounded-xl p-8">
+  <div class="relative mx-auto lg:w-1/2 border-2 border-red-900 bg-gray-50 shadow-xl rounded-xl p-8">
     <p class="text-3xl font-bold">Your Staking Account is: {{ parseFarmerState(farmerAcc) }}</p>
-    <div class="mb-2 w300:block hidden">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
-    <div class="mb-2">Items staked: {{ farmerAcc.gemsStaked }}</div>
-    <!-- <div class="mb-2">
-      Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
-    </div>
-    <div class="mb-5">
-      Cooldown ends: {{ parseDate(farmerAcc.cooldownEndsTs) }}
-    </div> -->
+    <div class="mb-2 w300:block hidden">Your identity: {{ farmerAcc?.identity.toBase58() }}</div>
+    <div class="mb-2">Associated vault: {{ farmerAcc?.vault.toBase58() }}</div>
+    <div class="mb-2">Items staked: {{ farmerAcc?.gemsStaked }}</div>
 
     <div class="flex mb-5">
       <div class="flex-1 mr-5">
@@ -22,18 +16,16 @@
           title="$DUST Rewards"
         />
       </div>
-      <!-- <div class="flex-1">
-        <FarmerRewardDisplay
-          :key="farmerAcc.rewardB"
-          :farmReward="farmAcc.rewardB"
-          :reward="farmerAcc.rewardB"
-          title="Reward B"
-        />
-      </div> -->
     </div>
     <button class="bg-rb-mickeyred text-white rounded-lg py-2 px-3" @click="refreshFarmer">
-      Refresh account
+      Refresh rewards
     </button>
+    <div class="absolute w-32 -bottom-6 right-4">
+      <img src="/converse.png" alt="shoey" />
+    </div>
+    <div class="absolute w-32 -bottom-6 right-32">
+      <img src="/air-shoey.png" alt="shoey" />
+    </div>
   </div>
 </template>
 
