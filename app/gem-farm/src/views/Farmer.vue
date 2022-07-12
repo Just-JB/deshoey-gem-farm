@@ -281,8 +281,8 @@ export default defineComponent({
       } finally {
         await fetchFarmer();
         isLoading.value = false;
-        var audio = new Audio('/Fast_Dust.mp3'); // path to file
-        audio.play();
+        // var audio = new Audio('/Fast_Dust.mp3'); // path to file
+        // audio.play();
       }
     };
 
