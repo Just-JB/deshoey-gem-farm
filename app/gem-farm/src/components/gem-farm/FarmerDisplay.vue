@@ -23,7 +23,7 @@
     <div class="absolute w-32 -bottom-6 right-4">
       <img src="/converse.png" alt="shoey" />
     </div>
-    <div class="absolute w-32 -bottom-6 right-32">
+    <div class="hidden sm:block absolute w-32 -bottom-6 right-32">
       <img src="/air-shoey.png" alt="shoey" />
     </div>
   </div>
