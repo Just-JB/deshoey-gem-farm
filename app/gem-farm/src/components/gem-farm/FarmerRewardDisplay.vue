@@ -1,16 +1,16 @@
 <template>
   <div class='pt-2'>
     <p class="text-2xl">{{ title }}</p>
-    <div class="mb-2">Accrued: {{ reward.accruedReward / 1000000000 }}</div>
-    <div class="mb-2">Total paid out: {{ reward.paidOutReward / 1000000000 }}</div>
+    <div class="mb-2">Accrued: {{ reward?.accruedReward / 1000000000 }}</div>
+    <div class="mb-2">Total paid out: {{ reward?.paidOutReward / 1000000000 }}</div>
     <div>
       <!-- fixed daily dust funding = 264/day so reward varies per number of staked items -->
       <div class="mb-2">
         Estimated Reward Rate (Variable):
         <span class="font-bold">
         {{ 
-          // divide by two for the first halving
-          Math.floor(((264/2) / parseNumGems(allGems)) * parseNumGems(yourGems) * 10) / 10
+          // rate per day is (total available dust reward per day / num staked items) * how many you have
+          Math.floor(((14.2) / parseNumGems(allGems)) * parseNumGems(yourGems) * 10) / 10
         }} $DUST/day
         </span>
       </div>
