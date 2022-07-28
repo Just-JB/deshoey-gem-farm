@@ -27,6 +27,7 @@ export default defineComponent({
     const menu = [
       { name: 'Home', url: '/' },
       { name: 'Staking', url: '/farmer' },
+      // { name: 'Website', url: 'https://www.deshoeys.xyz/' }
     ];
 
     return {
@@ -43,6 +44,12 @@ export default defineComponent({
 }
 
 .more {
+  @apply px-10 py-3 text-white
+  hover:bg-white hover:text-black;
+  outline: none;
+}
+
+.website-button {
   @apply px-10 py-3 text-white
   hover:bg-white hover:text-black;
   outline: none;
