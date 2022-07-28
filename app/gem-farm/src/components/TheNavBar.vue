@@ -7,6 +7,9 @@
       :url="i.url"
       :class="{ active: path === i.url }"
     />
+    <div class="website-button">
+      <a href="https://www.deshoeys.xyz/" target="_blank" ref="noreferrer">DeShoeys.xyz</a>
+    </div>
   </nav>
 </template>
 
