@@ -75,4 +75,5 @@ export const mints = [
   'HZqyy645gzzGz2Yi7Ss7j6qfyrFW2b52VsGWvtL6ZmVA',
   'HmSb1Xjt3wrnhmaGST9rgsGipSJxmiZRrXd6GpKvjhkQ',
   'FCdG9bPR94SjoVTU37p4tq7gcnZMYbAkRVe8ruUPEoFk',
+  'BtvwHiUJnndn3Yq1tkQi5rU5AWWHvnbqyk4QpF8kSPEZ',
 ];
