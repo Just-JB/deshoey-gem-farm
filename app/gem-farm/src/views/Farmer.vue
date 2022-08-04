@@ -22,7 +22,7 @@
           <div class="text-base">% of Total Shoes Staked</div>
           <div v-if="farmAcc" class="text-6xl farm-value">
             {{
-              Math.floor((parseInt(farmAcc?.gemsStaked) / 60.0) * 100 * 10) /
+              Math.floor((parseInt(farmAcc?.gemsStaked) / 77.0) * 100 * 10) /
               10
             }}%
           </div>
